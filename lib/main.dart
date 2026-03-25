@@ -28,27 +28,27 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  // Кольори з макету
-  final Color primaryBlue = const Color(0xFF283593); // Темно-синій (AppBar та верх)
-  final Color lightBlue = const Color(0xFF64B5F6);   // Світло-синій (Пошук)
+  
+  final Color primaryBlue = const Color.fromARGB(255, 147, 40, 122); 
+  final Color lightBlue = const Color.fromARGB(255, 246, 100, 190);   
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFF5F5F5), // Світло-сірий фон як на фото
+      backgroundColor: const Color(0xFFF5F5F5), 
       appBar: AppBar(
         backgroundColor: primaryBlue,
         elevation: 0,
         title: const Text(
           'Where do you want to travel?',
-          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+          style: TextStyle(color: Color.fromARGB(255, 255, 255, 255), fontWeight: FontWeight.bold),
         ),
       ),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // 1. Верхній синій блок (Пошук)
+            // 1. Верхній  блок (Пошук)
             Container(
               padding: const EdgeInsets.fromLTRB(16, 0, 16, 25),
               decoration: BoxDecoration(
@@ -111,22 +111,22 @@ class _MyHomePageState extends State<MyHomePage> {
 
             // 3. Список Best Deals
             SizedBox(
-              height: 200, // Висота під картки без фото
+              height: 200, 
               child: SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 padding: const EdgeInsets.only(left: 20),
                 child: Row(
                   children: [
                     buildCard('El Cairo', 'Egypt', '\$260', Colors.orange, showImage: false, width: 160),
-                    buildCard('London', 'England', '\$330', Colors.blue, showImage: false, width: 160),
+                    buildCard('London', 'England', '\$330', const Color.fromARGB(255, 243, 33, 194), showImage: false, width: 160),
                   ],
                 ),
               ),
             ),
 
-            // 4. Заголовок Popular (Піднятий вище)
+            // 4. Заголовок Popular 
             const Padding(
-              padding: EdgeInsets.only(left: 20, top: 10, bottom: 5), // Мінімальні відступи
+              padding: EdgeInsets.only(left: 20, top: 10, bottom: 5),
               child: Text(
                 'Popular Destinations',
                 style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
@@ -156,7 +156,7 @@ class _MyHomePageState extends State<MyHomePage> {
         type: BottomNavigationBarType.fixed,
         showSelectedLabels: false,
         showUnselectedLabels: false,
-        selectedItemColor: Colors.blue[700],
+        selectedItemColor: const Color.fromARGB(255, 210, 25, 176),
         unselectedItemColor: Colors.grey[400],
         items: const [
           BottomNavigationBarItem(icon: Icon(Icons.home, size: 28), label: ''),
@@ -206,11 +206,11 @@ class _MyHomePageState extends State<MyHomePage> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text('More', style: TextStyle(color: Colors.blue[300], fontWeight: FontWeight.w500)),
+                      Text('More', style: TextStyle(color: const Color.fromARGB(255, 246, 100, 234), fontWeight: FontWeight.w500)),
                       Container(
                         padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                         decoration: BoxDecoration(
-                          color: Colors.blue[400],
+                          color: const Color.fromARGB(255, 245, 66, 182),
                           borderRadius: BorderRadius.circular(15),
                         ),
                         child: Text(price, style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
